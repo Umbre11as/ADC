@@ -3,3 +3,6 @@
 
 # CMake build cache
 build-cache
+
+# Deploy
+dist
