@@ -27,7 +27,7 @@ void PrintInfo(IN PCSTR Format, ...) {
 }
 
 PCSTR driverName = "SomeDrv";
-PCSTR driverPath = "HelloWorld.sys";
+PCSTR driverPath = "Z:\\HelloWorld.sys";
 
 int main() {
     SC_HANDLE serviceManager = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
@@ -50,6 +50,11 @@ check:
         if (error == ERROR_SERVICE_EXISTS) {
             service = OpenService(serviceManager, driverName, SERVICE_ALL_ACCESS);
             goto check;
+        }
+        if (error == ERROR_INVALID_HANDLE) {
+            ERR("Restart your PC");
+            if ((service = OpenService(serviceManager, driverName, SERVICE_ALL_ACCESS))) // Maybe service with same name exists and stopped
+                DeleteService(service);
         }
 
         ERR("Cannot create kernel driver service: 0x%lX", error);
