@@ -7,4 +7,5 @@ file(GLOB_RECURSE SOURCES "src/*.c")
 add_executable(ADC ${SOURCES})
 
 add_subdirectory(api)
+add_subdirectory(Cli)
 add_subdirectory(challenges/create-device)
