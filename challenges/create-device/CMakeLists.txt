@@ -1,6 +1,7 @@
 project(CreateDevice LANGUAGES C)
 
-add_executable(CreateDevice src/main.c)
+add_link_options("/ENTRY:DriverEntry")
 
-target_include_directories(CreateDevice PUBLIC "../../api/src")
-target_link_libraries(CreateDevice PUBLIC "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${CMAKE_BUILD_TYPE}/Api.lib")
+wdk_add_driver(CreateDevice src/main.c)
+
+target_link_libraries(CreateDevice kCaveHook)

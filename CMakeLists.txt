@@ -4,4 +4,4 @@ project(ADC)
 
 add_subdirectory(api)
 add_subdirectory(cli)
-add_subdirectory(challenges/create-device)
+add_subdirectory(challenges)
