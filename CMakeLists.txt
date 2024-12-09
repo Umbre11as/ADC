@@ -6,5 +6,4 @@ include(FetchContent)
 
 add_subdirectory(api)
 add_subdirectory(cli)
-add_subdirectory(gui)
 add_subdirectory(challenges)

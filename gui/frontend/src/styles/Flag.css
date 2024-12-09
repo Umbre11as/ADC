@@ -1,0 +1,15 @@
+.flag-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  background-color: #27252A;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  height: 16px;
+  padding: 7px;
+  font-size: 12px;
+}
+
+.flag-item img {
+  margin-right: 8px;
+}
